@@ -1,6 +1,7 @@
 {
-    "files.associations": {
-        "sstream": "cpp",
-        "new": "cpp"
-    }
+  "files.associations": {
+    "sstream": "cpp",
+    "new": "cpp"
+  },
+  "gutterpreview.imagePreviewMaxHeight": 150
 }
