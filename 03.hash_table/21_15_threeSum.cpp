@@ -15,6 +15,7 @@ using namespace std;
 // 如果用双指针法做二数之和，则因为先排序导致复杂度为nlog(n)这大于最优解哈希表o(n),
 // 而三数之和因为本身复杂度o(n²),所以可以兼容nlog(n)的复杂度来使用双指针排序，
 // 若这时双指针还使用哈希表，由于需要多组解和去重，会因为传解导致复杂度为o(n²logn),比双指针法三数之和更复杂
+// 重点是去重 i,left,right值都不能和自己重复
 class Solution
 {
 public:
@@ -26,7 +27,7 @@ public:
         {
             for (int i = 0; i < nums.size() - 2; i++)
             {
-                // 这里的跳法是个数学问题file://./imgs/21_25.png
+                // 这里的跳法是个数学问题file://./imgs/21_15.png
                 //  当 i = 0 → nums[i] = -1 ，让 left 和 right 寻找[-1, x, y] 的组合。
                 //  当 i = 1 → nums[i] 还是 - 1， 再次让 left 和 right 寻找[-1, x, y] 的组合。
                 //  而i在最左边时，x和y可以尝试的区间是最大的，后面i向右移动不论多少，只要i值不变，
@@ -47,6 +48,8 @@ public:
                         result.push_back(vector<int>{nums[i], nums[left], nums[right]});
                         // break;⚠️不能用break否则会错过其他left+right=nums[i]的其他不同left，right的解
                         // 获得了正确的解之后left,right各先挪动一步，然后根据挪动后的值是否为老值来去重，目的是跳过老值
+                        // 因为temp_result得到了解，只动left或者right都会导致temp_result一定不再是需要解，所以两个要一起动
+                        // 相同的left都用最左边的值，相同的right都用最右边的值
                         left++;
                         right--;
                         while (right > left && nums[left] == nums[left - 1])
@@ -71,7 +74,7 @@ public:
     }
 };
 
-// 这种方法对了，但开销太高超时 哈希表传递导致成为了o(n²log(n))
+// 这种方法对了，但开销太高超时 哈希表用来去重导致复杂度成为了o(n²log(n))
 class DeprecatedSolution
 {
 public:

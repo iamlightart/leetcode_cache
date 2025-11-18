@@ -1,8 +1,9 @@
+
+// https://leetcode.cn/problems/remove-element/description/
 #include <iostream>
 #include <vector>
 using namespace std;
 
-// https://leetcode.cn/problems/remove-element/description/
 class Solution
 {
 public:

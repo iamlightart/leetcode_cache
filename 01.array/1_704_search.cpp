@@ -1,8 +1,8 @@
+// https://leetcode.cn/problems/binary-search/
 #include <iostream>
 #include <vector>
 using namespace std;
 
-// https://leetcode.cn/problems/binary-search/
 class Solution
 {
 public:
