@@ -11,7 +11,8 @@
 using namespace std;
 // 剪枝需要在可以正确运行的情况下，进行1️⃣for_i 2️⃣for_j 两层剪枝，
 // 第三层剪枝3️⃣while(left,right)是否开启都可以正常通过所有测试，但是貌似ai都会觉得第三层会导致漏解
-// 我感觉好像第二层的剪枝已经对第三层进行了有效清理
+// 我感觉好像第二层的剪枝已经对第三层进行了有效清理，
+// 其实第三层就是相当于第二层的min_sum和max_sum都在不满足条件的情况下continue,而不是最小值break，最大值continue
 class Solution
 {
 public:
@@ -81,7 +82,7 @@ public:
         return result;
     }
 };
-// 只开启第三层，或者开启第一层和第三层，依然不会漏解，证明和第二层应该是等价的
+// 只开启第三层，或者开启第一层和第三层，依然不会漏解，证明和第二层应该是几乎等价的
 class only_tird_layer_Solution
 {
 public:
