@@ -47,7 +47,7 @@ int main()
     }
     cout << result;
 }
-// 最傻解法
+// 最傻解法,但效率一样高
 // int main()
 // {
 //     string input_string;
