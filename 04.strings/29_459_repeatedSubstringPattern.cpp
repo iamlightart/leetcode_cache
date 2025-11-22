@@ -54,10 +54,10 @@ public:
             j++;
         }
 
-        for (auto c : next)
-        {
-            cout << c << ",";
-        }
+        // for (auto c : next)
+        // {
+        //     cout << c << ",";
+        // }
 
         // int sub = s.size() - next[s.size() - 1];
         // cout << sub << endl;
@@ -68,15 +68,15 @@ public:
         //     return false;
         // else
         // {
-        //     // 上面构造next数组时候用了i，如果再用i，for循环内部会使用上面定义的i
-        //     for (int k = temp.size(); k < s.size(); k += temp.size())
+
+        //     for (int i = temp.size(); i < s.size(); i += temp.size())
         //     {
-        //         if (temp != s.substr(k, min(s.size() - k, temp.size())))
+        //         if (temp != s.substr(i, min(s.size() - i, temp.size())))
         //             return false;
         //     }
         // }
 
-        return true;
+        // return true;
     }
 };
 int main()
