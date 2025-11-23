@@ -13,65 +13,65 @@ using namespace std;
 // KMP就是把输入字符串的每一个子串，计算首尾相等的长度然后存起来，匹配的时候遇到不一样的值，则只挪动过的长度
 
 // ✅标准答案
-// class Solution
-// {
-// public:
-//     // 构造前缀表（next 数组）
-//     vector<int> buildNext(const string &pattern)
-//     {
-//         int m = pattern.size();
-//         vector<int> nxt(m, 0);
-//         int j = 0; // 已匹配的前缀长度
+class Solution
+{
+public:
+    // 构造前缀表（next 数组）
+    vector<int> buildNext(const string &pattern)
+    {
+        int m = pattern.size();
+        vector<int> nxt(m, 0);
+        int j = 0; // 已匹配的前缀长度
 
-//         // i 从 1 开始扫描（nxt[0] 恒为 0）
-//         for (int i = 1; i < m; i++)
-//         {
-//             // 如果不匹配，回退
-//             while (j > 0 && pattern[i] != pattern[j])
-//             {
-//                 j = nxt[j - 1];
-//             }
-//             // 如果匹配，增加匹配长度
-//             if (pattern[i] == pattern[j])
-//             {
-//                 j++;
-//             }
-//             nxt[i] = j;
-//         }
+        // i 从 1 开始扫描（nxt[0] 恒为 0）
+        for (int i = 1; i < m; i++)
+        {
+            // 如果不匹配，回退
+            while (j > 0 && pattern[i] != pattern[j])
+            {
+                j = nxt[j - 1];
+            }
+            // 如果匹配，增加匹配长度
+            if (pattern[i] == pattern[j])
+            {
+                j++;
+            }
+            nxt[i] = j;
+        }
 
-//         return nxt;
-//     }
+        return nxt;
+    }
 
-//     // KMP 主算法：返回 pattern 在 text 中首次出现的位置
-//     int strStr(string text, string pattern)
-//     {
-//         if (pattern.empty())
-//             return 0;
+    // KMP 主算法：返回 pattern 在 text 中首次出现的位置
+    int strStr(string text, string pattern)
+    {
+        if (pattern.empty())
+            return 0;
 
-//         vector<int> nxt = buildNext(pattern);
-//         int j = 0;
+        vector<int> nxt = buildNext(pattern);
+        int j = 0;
 
-//         for (int i = 0; i < (int)text.size(); i++)
-//         {
-//             while (j > 0 && text[i] != pattern[j])
-//             {
-//                 j = nxt[j - 1];
-//             }
-//             if (text[i] == pattern[j])
-//             {
-//                 j++;
-//             }
-//             if (j == pattern.size())
-//             {
-//                 return i - j + 1; // 完整匹配
-//             }
-//         }
-//         return -1;
-//     }
-// };
+        for (int i = 0; i < (int)text.size(); i++)
+        {
+            while (j > 0 && text[i] != pattern[j])
+            {
+                j = nxt[j - 1];
+            }
+            if (text[i] == pattern[j])
+            {
+                j++;
+            }
+            if (j == pattern.size())
+            {
+                return i - j + 1; // 完整匹配
+            }
+        }
+        return -1;
+    }
+};
 
 // ⚠️我目前的做法从复杂度上来看时极其错误的，没有理解kmp的核心，需要进一步学习一下，这个解复杂度已经是o(n³)
-class Solution
+class MySolution
 {
 public:
     vector<int> calc_kmp(string &needle)

@@ -1,5 +1,5 @@
 // https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/
-//  2025-11-20
+//  2025-11-23
 #include <iostream>
 #include <vector>
 #include <string>
