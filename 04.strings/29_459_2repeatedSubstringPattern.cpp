@@ -14,6 +14,7 @@ class Solution
 {
 public:
     // 右值传引用，需要const
+    // 右值传引用，需要const
     vector<int> form_next(const string &s)
     {
         vector<int> result((int)s.size(), 0);
@@ -34,7 +35,7 @@ public:
 
                 else
                 {
-                    while (s[i] != s[j])
+                    while (i != 0 && s[i] != s[j])
                     {
                         i = result[i - 1];
                         if (i == 0)
@@ -67,6 +68,7 @@ public:
         if (s.size() % pattern.size() != 0)
             return false;
         // 只要余数为0即为结果，不需要截取子串验证
+        // file://./imgs/29_459.jpg
         // else
         // {
         //     for (int i = pattern.size(); i < s.size(); i += pattern.size())
