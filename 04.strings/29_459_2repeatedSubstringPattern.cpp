@@ -68,7 +68,7 @@ public:
         if (s.size() % pattern.size() != 0)
             return false;
         // 只要余数为0即为结果，不需要截取子串验证
-        // file://./imgs/29_459.jpg
+        // 数学证明 file://./imgs/29_459.jpg
         // else
         // {
         //     for (int i = pattern.size(); i < s.size(); i += pattern.size())
