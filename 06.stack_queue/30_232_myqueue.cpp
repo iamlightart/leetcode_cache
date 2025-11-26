@@ -53,11 +53,11 @@ public:
 };
 
 // Your MyQueue object will be instantiated and called as such:
-int main()
-{
-    MyQueue *obj = new MyQueue();
-    obj->push(x);
-    int param_2 = obj->pop();
-    int param_3 = obj->peek();
-    bool param_4 = obj->empty();
-}
+// int main()
+// {
+//     MyQueue *obj = new MyQueue();
+//     obj->push(x);
+//     int param_2 = obj->pop();
+//     int param_3 = obj->peek();
+//     bool param_4 = obj->empty();
+// }
