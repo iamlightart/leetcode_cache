@@ -1,2 +1,4 @@
-04.strings/28_28_2_strStr.cpp
+04.strings/28_28_strStr.cpp
+04.strings/29_459_repeatedSubstringPattern.cpp
 06.stack_queue/35_239_maxSlidingWindow.cpp
+06.stack_queue/36_347_3topKFrequent.cpp 自己实现了priority_queue之后再弄
