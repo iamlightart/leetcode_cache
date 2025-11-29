@@ -7,4 +7,6 @@
 .DS_Store
 # 例外：保留目录（避免误删文件夹）
 !*/
+
 .vscode
+tempCodeRunnerFile.cpp
