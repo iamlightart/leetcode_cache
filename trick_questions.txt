@@ -2,3 +2,4 @@
 04.strings/29_459_repeatedSubstringPattern.cpp
 06.stack_queue/35_239_maxSlidingWindow.cpp
 06.stack_queue/36_347_3topKFrequent.cpp 自己实现了priority_queue之后再弄
+07.binary_tree/39_94_2inorderTraversal.cpp 用遍历的方法些中序，有点技巧
