@@ -18,7 +18,7 @@ struct TreeNode
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
-// 遍历方法
+// 迭代遍历
 class Solution
 {
 public:

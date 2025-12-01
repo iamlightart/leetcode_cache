@@ -19,8 +19,8 @@ struct TreeNode
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 // 中序就是在中间
-// 遍历方法，每次节点被pop()后再将这个节点的right节点入栈
-// 每次都是左边彻底空了就往右边执行
+// 迭代遍历，每次节点被pop()后再将这个节点的right节点入栈
+// 左边有值往左走，左边没值了自身加入result，往右走
 class Solution
 {
 public:

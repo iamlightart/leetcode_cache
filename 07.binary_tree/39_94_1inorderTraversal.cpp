@@ -19,7 +19,7 @@ struct TreeNode
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 // 中序就是在中间。
-// 递归方法
+// 递归遍历
 class referenceSolution
 {
 public:

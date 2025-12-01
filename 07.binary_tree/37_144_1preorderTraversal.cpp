@@ -20,7 +20,7 @@ struct TreeNode
 };
 // 前序的意思是当前点在最前面
 // Java除了数、字符、bool，其他都是引用类型，传参就相当于&result
-// 递归方法
+// 递归遍历
 class Solution
 {
 public:

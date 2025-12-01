@@ -19,7 +19,7 @@ struct TreeNode
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 // 后序是中点在最后面
-// 遍历方法,和前序类似，但是是输出中右左，然后把答案完全反过来，就是左右中
+// 迭代遍历,和前序类似，但是是输出中右左，然后把答案完全反过来，就是左右中
 class Solution
 {
 public:
