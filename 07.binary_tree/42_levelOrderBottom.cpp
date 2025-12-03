@@ -1,6 +1,4 @@
-// https://leetcode.cn/problems/binary-tree-preorder-traversal/
-// https://leetcode.cn/problems/binary-tree-postorder-traversal
-// https://leetcode.cn/problems/binary-tree-inorder-traversal/description
+// https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/
 #include <iostream>
 #include <vector>
 #include <string>
@@ -23,7 +21,7 @@ struct TreeNode
 class Solution
 {
 public:
-    vector<vector<int>> levelOrder(TreeNode *root)
+    vector<vector<int>> levelOrderBottom(TreeNode *root)
     {
         vector<vector<int>> result{};
         if (root == nullptr)
@@ -38,24 +36,20 @@ public:
                 layerStack.push(tempStack.top());
                 tempStack.pop();
             }
-            vector<int> layerReuslt{};
+            vector<int> layerResult{};
             while (!layerStack.empty())
             {
                 TreeNode *tempNode = layerStack.top();
-                // 因为有一个从temp_stack倒给layer_stack的过程，所以方向又翻了一次，就是先left后right了
+                layerResult.push_back(tempNode->val);
                 if (tempNode->left)
-                {
                     tempStack.push(tempNode->left);
-                }
                 if (tempNode->right)
-                {
                     tempStack.push(tempNode->right);
-                }
-                layerReuslt.push_back(tempNode->val);
                 layerStack.pop();
             }
-            result.push_back(layerReuslt);
+            result.push_back(layerResult);
         }
+        reverse(result.begin(), result.end());
         return result;
     }
 };
