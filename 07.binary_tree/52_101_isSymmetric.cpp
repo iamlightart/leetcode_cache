@@ -1,3 +1,4 @@
+// https://leetcode.cn/problems/symmetric-tree/submissions/683043010/
 //  Definition for a binary tree node.
 #include <iostream>
 using namespace std;
@@ -10,7 +11,7 @@ struct TreeNode
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
-// 优化掉头插效率就很高了，deque尽量不要用push_front
+// 优化掉头插效率就很高了，deque尽量不要用push_front()
 //  deque 不是 “连续内存数组”，而是由一个「中控数组」+多个固定大小的「分段数组」组成（可以理解为 “数组 + 动态的双向链表 ”）：
 // 中控数组：[分段1地址, 分段2地址, 分段3地址]
 //           ↓         ↓         ↓
@@ -69,7 +70,7 @@ public:
         return true;
     };
 };
-// 用头插效率低，尝试优化
+// 用deque的push_front()头插效率低，尝试优化
 // class SlowSolution
 // {
 // public:
