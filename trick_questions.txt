@@ -1,5 +1,5 @@
-04.strings/28_28_strStr.cpp
-04.strings/29_459_repeatedSubstringPattern.cpp
-06.stack_queue/35_239_maxSlidingWindow.cpp
-06.stack_queue/36_347_3topKFrequent.cpp 自己实现了priority_queue之后再弄
-07.binary_tree/39_94_2inorderTraversal.cpp 用遍历的方法些中序，有点技巧
+file://./04.strings/28_28_2strStr.cpp kmp快速匹配子串
+file://./04.strings/29_459_2repeatedSubstringPattern.cpp kmp找到最小重复串
+file://./06.stack_queue/35_239_2maxSlidingWindow.cpp 找滑动窗口的最大值，子集队列降序
+file://./06.stack_queue/36_347_3topKFrequent.cpp 自己实现了priority_queue之后再弄
+file://./07.binary_tree/39_94_2inorderTraversal.cpp 用遍历的方法些中序，有点技巧
