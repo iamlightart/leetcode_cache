@@ -12,7 +12,8 @@ struct TreeNode
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
-// TODO 尝试用后序遍历完成判断，好像和dp还有点关系
+// TODO ⚠️⚠️尝试用后序遍历完成判断，好像和dp还有点关系
+// TODO ⚠️⚠️从这道题开始向后所有的题还没有尝试优化更好的算法！！！
 class SlowSolution
 {
 public:
