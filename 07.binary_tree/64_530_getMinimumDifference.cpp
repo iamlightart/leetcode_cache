@@ -12,7 +12,50 @@ struct TreeNode
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
-// 直接想出来的感觉相当于暴力解，效率不高
+// 直觉inorder做法为了保证prev的值一直正确，必须排除第一次计算
+// 因为inorder处理的第一个节点一定是第一次计算要用到的，用一个flag标记即可
+class Solution
+{
+    int result = INT_MAX;
+    int prev = INT_MAX;
+    bool firstNode = true;
+
+public:
+    int getMinimumDifference(TreeNode *root)
+    {
+        if (root == nullptr)
+            return 0;
+        getMinimumDifference(root->left);
+        // 用第一次判断来排除第一个node的第一次计算
+        if (!firstNode)
+            result = min(result, abs(root->val - prev));
+        else
+            firstNode = false;
+        prev = root->val;
+        getMinimumDifference(root->right);
+        return result;
+    }
+};
+
+// 哦！💡 因为是二叉搜索树，天然存在排序，用中序来处理
+class inorderSolution
+{
+    int result = INT_MAX;
+    int prev = INT_MAX;
+
+public:
+    int getMinimumDifference(TreeNode *root)
+    {
+        if (root == nullptr)
+            return 0;
+        getMinimumDifference(root->left);
+        result = min(result, abs(root->val - prev));
+        prev = root->val;
+        getMinimumDifference(root->right);
+        return result;
+    }
+};
+//  直接想出来的感觉相当于暴力解，效率不高
 class Solution
 {
     vector<int> hodor{};
