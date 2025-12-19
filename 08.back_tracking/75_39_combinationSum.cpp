@@ -21,6 +21,13 @@ private:
         {
             temp += candidates[i];
             result.push_back(candidates[i]);
+            // TODO 起来研究一下，return的条件，尤其是前一面比如73——216的⚠️️️️️⚠️️️️️⚠️️️️️ 这道题里不能随便return了，注意做个类比
+            // if (counts == 0)
+            // {
+            //     if (curr_sum == n)
+            //         results.push_back(result_hodor);
+            //     return;
+            // }
             if (temp == target)
                 results.push_back(result);
             else if (temp < target)
