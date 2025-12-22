@@ -1,11 +1,68 @@
 // https://leetcode.cn/problems/restore-ip-addresses/
 #include <iostream>
 using namespace std;
+
+class Solution
+{
+public:
+    vector<string> restoreIpAddresses(string s)
+    {
+        restoreImpl(s, 0);
+        return results;
+    }
+
+private:
+    vector<int> result;
+    vector<string> results;
+    void restoreImpl(string &s, int start)
+    {
+        if (s.size() > 12)
+            return;
+        int remain_chars = s.size() - start;
+        int remain_parts = 4 - result.size();
+        // ⚠️关键剪枝，s长度不确定，剩的char比需要填的part还少，每个位置至少填1，这种直接return
+        // 同时剩下的比需要填的3倍还多，也直接return
+        if (remain_chars < remain_parts || remain_chars > remain_parts * 3)
+            return;
+        if (result.size() > 4)
+            return;
+        int num = 0;
+        if (start == s.size() && result.size() == 4)
+            results.push_back(convert_result(result));
+        // 注意i的边界要小于s.size()
+        for (int i = start; i < start + 3 && i < s.size(); i++)
+        {
+            num = num * 10 + s[i] - '0';
+            if (num > 255)
+                break;
+            // 注意s[start]是字符
+            else if (i > start && s[start] == '0')
+                break;
+            else
+            {
+                result.push_back(num);
+                restoreImpl(s, i + 1);
+                result.pop_back();
+            }
+        }
+    }
+    string convert_result(vector<int> input)
+    {
+        string result = "";
+        for (int i = 0; i < input.size(); i++)
+        {
+            result += to_string(input[i]);
+            if (i != input.size() - 1)
+                result += ".";
+        };
+        return result;
+    }
+};
 // 思路对了，效率只击败了50%
 // 应该用 num = num * 10 + (s[i] - '0'); if (num > 255) break; 判断每一个三位数，效率更高
 // 同时用 vector<int> 存结果，只在返回results处再做拼接
 // 前导 0 剪枝 if (i > start && s[start] == '0') break; 确保023这样的值不进入结果集
-class Solution
+class SlowSolution
 {
 public:
     vector<string> restoreIpAddresses(string s)
