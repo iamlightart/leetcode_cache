@@ -1,9 +1,33 @@
 // https://leetcode.cn/problems/subsets/
 #include <iostream>
 using namespace std;
+class Solution
+{
+public:
+    vector<vector<int>> subsets(vector<int> &nums)
+    {
+        results.push_back(result);
+        subImpl(nums, 0);
+        return results;
+    }
+
+private:
+    vector<vector<int>> results{};
+    vector<int> result{};
+    void subImpl(vector<int> &nums, int start)
+    {
+        for (int i = start; i < nums.size(); i++)
+        {
+            result.push_back(nums[i]);
+            results.push_back(result);
+            subImpl(nums, i + 1);
+            result.pop_back();
+        }
+    }
+};
 // 自己观察出了一种组合性质。。。用两层for解决了没有用回溯
 // file://./imgs/79_78_subsets.jpg
-class Solution
+class MySolution
 {
 public:
     vector<vector<int>> subsets(vector<int> &nums)
