@@ -3,6 +3,11 @@
 #include <unordered_set>
 using namespace std;
 // 用vector<bool>来记录使用过的位置效率更高
+// 这题有一个用swap的方法，底层原理是组合数学，效率更高，因为和算法复杂度没关系就没研究了
+// for (int i = start; i < nums.size(); i++) {
+//     swap(nums[start], nums[i]);
+//     permuteImpl(nums, start + 1);
+//     swap(nums[start], nums[i]); // 回溯
 class Solution
 {
 public:
