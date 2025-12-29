@@ -6,7 +6,8 @@ class Solution
 public:
     void solveSudoku(vector<vector<char>> &board)
     {
-        // 1️⃣ 核心回溯逻辑已完成（AC），下一步优化目标：
+        // TODO 找数独的回溯优化没有做
+        //  1️⃣ 核心回溯逻辑已完成（AC），下一步优化目标：
 
         // 【效率优化 1】使用布尔数组缓存状态
         // - 当前每行/每列/每宫格已填数字用 bool 表示
