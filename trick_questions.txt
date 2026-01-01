@@ -3,8 +3,8 @@ file://./04.strings/29_459_2repeatedSubstringPattern.cpp kmp找到最小重复�
 file://./06.stack_queue/35_239_2maxSlidingWindow.cpp 找滑动窗口的最大值，子集队列降序
 file://./06.stack_queue/36_347_3topKFrequent.cpp 自己实现了priority_queue之后再弄
 file://./07.binary_tree/39_94_2inorderTraversal.cpp 用遍历的方法些中序，有点技巧。递归的核心考点就是while+手动stack，完成递归后可以用 while写进阶版本
-
-
+file://./09.greedy/102_134_canCompleteCircuit.cpp 不用绕一圈，只要排除掉小于0的各种开始，剩下的大于0的一定满足解
+file://./09.greedy/105_406_reconstructQueue.cpp lambda表达式的用法做排序
 
 太好了，这个清单**正是你现在这个层级最需要的“考试信任白名单”**。
 下面这份是我按：**LeetCode / 算法考试 / 面试的真实出题逻辑**，为你整理的——
