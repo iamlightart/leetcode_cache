@@ -12,7 +12,7 @@ public:
         sort(people.begin(), people.end(), [](const vector<int> &a, const vector<int> &b)
              {
         if (a[0] != b[0]) {
-            return a[0] > b[0]; // 第一位升序
+            return a[0] > b[0]; // 第一位降序
         } else {
             return a[1] < b[1]; // 第二位升序
         } });
