@@ -50,14 +50,14 @@ public:
         if (total % 2 == 1)
             return false;
         int half = total / 2;
-        vector<vector<int>> dp(nums.size(), vector<int>(half + 1));
+        vector<vector<int>> dp(nums.size() + 1, vector<int>(half + 1, 0));
 
-        for (int i = 0; i < nums.size(); i++)
+        for (int i = 1; i < nums.size(); i++)
         {
             for (int j = 1; j <= half; j++)
             {
                 if (j >= nums[i])
-                    dp[i][j] = max(dp[i][j - 1], dp[i][j - nums[i]] + nums[i]);
+                    dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - nums[i]] + nums[i]);
                 else
                     dp[i][j] = dp[i - 1][j];
             }
