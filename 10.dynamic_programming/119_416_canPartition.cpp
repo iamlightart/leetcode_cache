@@ -52,12 +52,13 @@ public:
         int half = total / 2;
         vector<vector<int>> dp(nums.size() + 1, vector<int>(half + 1, 0));
 
-        for (int i = 1; i < nums.size(); i++)
+        for (int i = 1; i <= nums.size(); i++)
         {
             for (int j = 1; j <= half; j++)
             {
-                if (j >= nums[i])
-                    dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - nums[i]] + nums[i]);
+                if (j >= nums[i - 1])
+                    // 之前+nums[i]只是碰巧做对了，因为就算从nums[1]开始，能加出来一半就一定是解
+                    dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - nums[i - 1]] + nums[i - 1]);
                 else
                     dp[i][j] = dp[i - 1][j];
             }
