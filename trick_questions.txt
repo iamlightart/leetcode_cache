@@ -6,7 +6,7 @@ file://./07.binary_tree/39_94_2inorderTraversal.cpp 用遍历的方法些中序�
 file://./09.greedy/102_134_canCompleteCircuit.cpp 不用绕一圈，只要排除掉小于0的各种开始，剩下的大于0的一定满足解
 file://./09.greedy/105_406_reconstructQueue.cpp lambda表达式的用法做排序
 file://./10.dynamic_programming/118_46_1_karma_dp.cpp 注意背包和物品的表格方向，j在i的外面两层遍历最直观
-
+file://./10.dynamic_programming/121_494_2_findTargetSumWays.cpp 恶心死我了
 太好了，这个清单**正是你现在这个层级最需要的“考试信任白名单”**。
 下面这份是我按：**LeetCode / 算法考试 / 面试的真实出题逻辑**，为你整理的——
 
